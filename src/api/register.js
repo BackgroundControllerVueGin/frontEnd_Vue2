@@ -2,7 +2,7 @@
 import request from "../utils/request";
 
 export function register(user) {
-  return request.get("/register", user);
+  return request.post("/register", user);
 }
 // export async function login(user) {
 //   try {

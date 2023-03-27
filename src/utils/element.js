@@ -12,6 +12,7 @@ import {
   Menu,
   Submenu,
   MenuItem,
+  MenuItemGroup,
   Breadcrumb,
   BreadcrumbItem,
   Card,
@@ -53,6 +54,7 @@ Vue.use(Main);
 Vue.use(Menu);
 Vue.use(Submenu);
 Vue.use(MenuItem);
+Vue.use(MenuItemGroup);
 Vue.use(Breadcrumb);
 Vue.use(BreadcrumbItem);
 Vue.use(Card);

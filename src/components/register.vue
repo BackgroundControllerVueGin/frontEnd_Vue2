@@ -94,18 +94,18 @@ export default {
     };
     return {
       ruleform: {
-        username: "",
-        password: "",
-        checkpassword: ""
+        username: "admin",
+        password: "123456",
+        checkpassword: "123456"
       },
       // 校验数据是否合法
       ruleLogin: {
         username: [
           { required: true, message: "请输入登录名称", trigger: "blur" },
           {
-            min: 4,
-            max: 8,
-            message: "长度在 2 到 10 个字符",
+            min: 3,
+            max: 10,
+            message: "长度在 3 到 10 个字符",
             trigger: "blur"
           }
         ],
@@ -147,10 +147,8 @@ export default {
             password: this.ruleform.password
           });
         } catch (error) {
-          if (error.response.status !== 200) {
-            console.log("后台返回数据status" + error.response.status);
-            return this.$message.error("注册失败");
-          }
+          console.log("后台返回数据status：" + error.response.message);
+          return this.$message.error("注册失败");
         }
 
         this.$message.success("注册成功");

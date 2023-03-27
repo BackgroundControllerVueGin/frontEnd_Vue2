@@ -1,8 +1,10 @@
 import axios from "axios";
 
 //配置跟路径
-axios.defaults.baseURL = "http://192.168.1.15:8401";
 
+// axios.defaults.baseURL = "http://localhost:3000";
+// axios.defaults.baseURL = "http://192.168.1.15:8401";
+axios.defaults.baseURL = "https://backend.loca.lt";
 // 添加请求拦截器
 axios.interceptors.request.use(
   function(config) {
@@ -25,7 +27,6 @@ axios.interceptors.response.use(
   function(error) {
     // 超出 2xx 范围的状态码都会触发该函数。
     // 对响应错误做点什么
-    console.log(error.response.data.message);
     return Promise.reject(error);
   }
 );
